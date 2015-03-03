@@ -54,6 +54,7 @@
 
   # pull
   pl = pull                         # pull
+  pr = pull --rebase
 
   # push
   ps = push                         # push
@@ -122,6 +123,9 @@
 [rerere]
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
-  enabled = true
+	enabled = true
 [include]
   path = .gitconfig.user
+[user]
+	name = Teddy Ku
+	email = teddypku@gmail.com
