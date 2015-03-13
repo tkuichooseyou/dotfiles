@@ -26,6 +26,7 @@ task :install => [:submodule_init, :submodules] do
   end
 
   Rake::Task["install_prezto"].execute
+  install_tmux_plugins
 
   install_fonts
 
@@ -176,6 +177,13 @@ def install_homebrew
   run %{brew install macvim --custom-icons --with-override-system-vim --with-lua --with-luajit}
   puts
   puts
+end
+
+def install_tmux_plugins
+  puts
+  puts "Installing tmux-plugins-manager"
+
+  run %{ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm }
 end
 
 def install_fonts
