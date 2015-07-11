@@ -129,3 +129,5 @@
 [user]
 	name = Teddy Ku
 	email = teddypku@gmail.com
+[credential]
+	helper = osxkeychain
