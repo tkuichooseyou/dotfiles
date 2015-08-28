@@ -131,3 +131,5 @@
 	email = teddypku@gmail.com
 [credential]
 	helper = osxkeychain
+[http]
+   sslVerify = false

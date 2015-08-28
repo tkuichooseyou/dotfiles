@@ -1,6 +1,10 @@
 let vimsettings = '~/.vim/settings'
 let uname = system("uname -s")
 
+nnoremap ,i :set invpaste paste?<CR>
+set pastetoggle=,i
+set showmode
+
 for fpath in split(globpath(vimsettings, '*.vim'), '\n')
 
   if (fpath == expand(vimsettings) . "/yadr-keymap-mac.vim") && uname[:4] ==? "linux"
