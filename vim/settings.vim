@@ -4,6 +4,7 @@ let uname = system("uname -s")
 nnoremap ,i :set invpaste paste?<CR>
 set pastetoggle=,i
 set showmode
+set clipboard=unnamed
 
 for fpath in split(globpath(vimsettings, '*.vim'), '\n')
 
