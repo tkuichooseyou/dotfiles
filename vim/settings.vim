@@ -32,3 +32,5 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 nnoremap \ :Ag<SPACE>
+
+autocmd FileType swift setlocal shiftwidth=4 tabstop=4
