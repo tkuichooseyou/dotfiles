@@ -7,6 +7,7 @@ yadr=$HOME/.yadr
 alias int='tmux attach -t int'
 alias work='tmux attach -t work'
 alias git='hub'
+alias brews='brew update && brew upgrade --all && brew cleanup; brew cask cleanup; brew doctor'
 
 # Get operating system
 platform='unknown'
