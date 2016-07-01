@@ -133,3 +133,5 @@
 	helper = osxkeychain
 [http]
    sslVerify = false
+[hub]
+	protocol = https

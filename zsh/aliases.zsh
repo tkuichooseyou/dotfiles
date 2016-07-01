@@ -3,6 +3,11 @@
 # Don't change. The following determines where YADR is installed.
 yadr=$HOME/.yadr
 
+# Teddy
+alias int='tmux attach -t int'
+alias work='tmux attach -t work'
+alias git='hub'
+
 # Get operating system
 platform='unknown'
 unamestr=$(uname)
@@ -59,7 +64,7 @@ alias :q='exit'
 alias ve='vim ~/.vimrc'
 
 # zsh profile editing
-alias ze='vim ~/.zshrc'
+alias ze='vim ~/.yadr/zsh/aliases.zshrc'
 
 # Common shell functions
 alias less='less -r'
