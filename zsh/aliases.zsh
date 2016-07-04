@@ -65,7 +65,7 @@ alias :q='exit'
 alias ve='vim ~/.vimrc'
 
 # zsh profile editing
-alias ze='vim ~/.yadr/zsh/aliases.zshrc'
+alias ze='vim ~/.yadr/zsh/aliases.zsh'
 
 # Common shell functions
 alias less='less -r'
