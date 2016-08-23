@@ -1,2 +1,4 @@
+set ignorecase
+set smartcase
 vnoremap <enter> :xcmenucmd Set Print Breakpoint<CR>
 noremap \<enter> :xcmenucmd Set Backtrace Breakpoint<CR>

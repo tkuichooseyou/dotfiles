@@ -4,6 +4,7 @@ Carthage/
 Pods/
 iOSInjectionProject/
 .swift-version
+xcuserdata/
 
 # node
 # ----------------------------------------------------------------------------------------------

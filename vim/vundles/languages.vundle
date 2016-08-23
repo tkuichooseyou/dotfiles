@@ -7,4 +7,5 @@ Bundle 'nelstrom/vim-markdown-preview'
 Bundle 'skwp/vim-html-escape'
 Bundle 'mxw/vim-jsx'
 Bundle 'Keithbsmiley/swift.vim'
+Bundle "b4winckler/vim-objc"
 Bundle 'facebook/vim-flow'
