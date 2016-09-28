@@ -12,6 +12,7 @@ Bundle 'kristijanhusak/vim-multiple-cursors'
 Bundle "christoomey/vim-tmux-navigator"
 Bundle "MarcWeber/vim-addon-mw-utils.git"
 Bundle "bogado/file-line.git"
+Bundle "mattn/webapi-vim.git"
 Bundle "sjl/gundo.vim"
 Bundle "skwp/YankRing.vim"
 Bundle "tpope/vim-dispatch"

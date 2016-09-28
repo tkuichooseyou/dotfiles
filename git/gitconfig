@@ -135,3 +135,5 @@
    sslVerify = false
 [hub]
 	protocol = https
+[github]
+	user = tkuichooseyou
