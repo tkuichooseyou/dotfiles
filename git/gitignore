@@ -5,6 +5,7 @@ Pods/
 iOSInjectionProject/
 .swift-version
 xcuserdata/
+.idea/
 
 # node
 # ----------------------------------------------------------------------------------------------
