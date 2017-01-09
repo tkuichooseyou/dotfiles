@@ -1,5 +1,16 @@
-set ignorecase
-set smartcase
 vnoremap <enter> :xcmenucmd Set Print Breakpoint<CR>
 noremap \<enter> :xcmenucmd Set Backtrace Breakpoint<CR>
 nnoremap ,. '.
+
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set expandtab
+
+set incsearch       " Find the next match as we type the search
+set hlsearch        " Highlight searches by default
+set ignorecase      " Ignore case when searching...
+set smartcase       " ...unless we type a capital
