@@ -28,3 +28,4 @@ Bundle "goldfeld/ctrlr.vim"
 Bundle "editorconfig/editorconfig-vim"
 Bundle "Valloric/MatchTagAlways"
 Bundle "ConradIrwin/vim-bracketed-paste"
+Plugin 'w0rp/ale'
