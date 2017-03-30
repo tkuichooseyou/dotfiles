@@ -22,6 +22,7 @@ task :install => [:submodule_init, :submodules] do
   install_files(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   install_files(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
   install_files(Dir.glob('{tigrc,ghci}'))
+  symlink_ssh_config()
   if want_to_install?('vim configuration (highly recommended)')
     install_files(Dir.glob('{vim,vimrc,xvimrc}'))
     Rake::Task["install_vundle"].execute
@@ -308,12 +309,23 @@ def want_to_install? (section)
   end
 end
 
+def symlink_ssh_config
+    file = "sshconfig"
+    source = "#{ENV["PWD"]}/sshconfig"
+    target = "#{ENV["HOME"]}/.ssh/config"
+    install_file(file, source, target)
+end
+
 def install_files(files, method = :symlink)
   files.each do |f|
     file = f.split('/').last
     source = "#{ENV["PWD"]}/#{f}"
     target = "#{ENV["HOME"]}/.#{file}"
+    install_file(file, source, target, method)
+  end
+end
 
+def install_file(file, source, target, method = :symlink)
     puts "======================#{file}=============================="
     puts "Source: #{source}"
     puts "Target: #{target}"
@@ -343,7 +355,6 @@ def install_files(files, method = :symlink)
 
     puts "=========================================================="
     puts
-  end
 end
 
 def needs_migration_to_vundle?
