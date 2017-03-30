@@ -18,6 +18,6 @@ function fn() { ls **/*$1* }
 
 alias yt='noglob yt'
 function yt() {
-  youtube-dl $1 &>/dev/null &
+  youtube-dl $1 -o '~/Movies/youtube/%(title)s.%(ext)s' &>/dev/null &
 }
 
