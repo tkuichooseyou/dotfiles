@@ -8,7 +8,8 @@ alias int='tmux attach -t int'
 alias work='tmux attach -t work'
 alias git='hub'
 alias brews='brew update && brew upgrade --all && brew cleanup; brew cask cleanup; brew doctor'
-alias keyboard='cd ~/repos/personal/fork/qmk_firmware/keyboards/ergodox_ez/keymaps/tkuichooseyou'
+alias vims='vim -c VundleUpdate -c quitall'
+alias keyboard='cd ~/repos/personal/fork/qmk_firmware/keyboards/ergodox/keymaps/tkuichooseyou'
 
 # Get operating system
 platform='unknown'
