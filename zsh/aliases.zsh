@@ -6,10 +6,10 @@ yadr=$HOME/.yadr
 # Teddy
 alias int='tmux attach -t int'
 alias work='tmux attach -t work'
-alias git='hub'
-alias brews='brew update && brew upgrade --all && brew cleanup; brew cask cleanup; brew doctor'
+alias brews='brew update && brew upgrade && brew cleanup; brew cask cleanup; brew doctor'
 alias vims='vim -c VundleUpdate -c quitall'
 alias keyboard='cd ~/repos/personal/fork/qmk_firmware/keyboards/ergodox/keymaps/tkuichooseyou'
+alias git='noglob git'
 
 # Get operating system
 platform='unknown'
@@ -80,18 +80,6 @@ alias cl='clear'
 # Zippin
 alias gz='tar -zcvf'
 
-# Ruby
-alias c='rails c' # Rails 3
-alias co='script/console' # Rails 2
-alias cod='script/console --debugger'
-
-#If you want your thin to listen on a port for local VM development
-#export VM_IP=10.0.0.1 <-- your vm ip
-alias ts='thin start -a ${VM_IP:-127.0.0.1}'
-alias ms='mongrel_rails start'
-alias tfdl='tail -f log/development.log'
-alias tftl='tail -f log/test.log'
-
 alias ka9='killall -9'
 alias k9='kill -9'
 
@@ -106,30 +94,14 @@ alias todo='open nvalt://find/todo'
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
-alias rdm='rake db:migrate'
-alias rdmr='rake db:migrate:redo'
-
-# Rspec
-alias rs='rspec spec'
-alias sr='spring rspec'
-alias src='spring rails c'
-alias srgm='spring rails g migration'
-alias srdm='spring rake db:migrate'
-alias srdt='spring rake db:migrate'
-alias srdmt='spring rake db:migrate db:test:prepare'
-
-
-# Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
-alias sp='sprintly'
-# spb = sprintly branch - create a branch automatically based on the bug you're working on
-alias spb="git checkout -b \`sp | tail -2 | grep '#' | sed 's/^ //' | sed 's/[^A-Za-z0-9 ]//g' | sed 's/ /-/g' | cut -d"-" -f1,2,3,4,5\`"
-
-alias hpr='hub pull-request'
 alias grb='git recent-branches'
 
 # Finder
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
-# Homebrew
-alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
+# teddy
+    # removed --color
+alias code2ebook='/Users/teddy/bin/code2ebook/src2html.pl --tab-width 4 --cross-reference --navigator --line-numbers' 
+    ## --authors --title
+alias ebook-convert='ebook-convert html_out/index.html my-project.mobi --output-profile kindle --no-inline-toc --language en'
