@@ -28,6 +28,11 @@ task :install => [:submodule_init, :submodules] do
     Rake::Task["install_vundle"].execute
   end
 
+  karabiner = 'karabiner.json'
+  source = "#{ENV["PWD"]}/#{karabiner}"
+  target = "#{ENV["HOME"]}/.config/karabiner/#{karabiner}"
+  install_file(karabiner, source, target)
+
   Rake::Task["install_prezto"].execute
   install_tmux_plugins
 
