@@ -103,7 +103,7 @@
   verbosity = 1
   tool = vimdiff
 [apply]
-  whitespace = nowarn
+  whitespace = fix
 [branch]
   autosetupmerge = true
 [push]
@@ -114,6 +114,7 @@
 	autocrlf = input
   editor = vim -v
   excludesfile = ~/.yadr/git/gitignore
+  whitespace = trailing-space,space-before-tab
 [advice]
   statusHints = false
 [diff]
