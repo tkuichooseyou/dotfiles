@@ -1,6 +1,5 @@
 require 'rake'
 require 'fileutils'
-require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'vundle')
 
 desc "Hook our dotfiles into system-standard positions."
 task :install => [:submodule_init, :submodules] do
@@ -24,8 +23,8 @@ task :install => [:submodule_init, :submodules] do
   install_files(Dir.glob('{tigrc,ghci}'))
   symlink_ssh_config()
   if want_to_install?('vim configuration (highly recommended)')
-    install_files(Dir.glob('{vim,vimrc,xvimrc}'))
-    Rake::Task["install_vundle"].execute
+    install_files(Dir.glob('{nvim,nvimrc,xvimrc}'))
+    Rake::Task["install_dein"].execute
   end
 
   karabiner = 'karabiner.json'
@@ -53,7 +52,6 @@ end
 
 desc 'Updates the installation'
 task :update do
-  Rake::Task["vundle_migration"].execute if needs_migration_to_vundle?
   Rake::Task["install"].execute
   #TODO: for now, we do the same as install. But it would be nice
   #not to clobber zsh files
@@ -81,43 +79,21 @@ task :submodules do
   end
 end
 
-desc "Performs migration from pathogen to vundle"
-task :vundle_migration do
+desc "Runs dein installer"
+task :install_dein do
   puts "======================================================"
-  puts "Migrating from pathogen to vundle vim plugin manager. "
-  puts "This will move the old .vim/bundle directory to"
-  puts ".vim/bundle.old and replacing all your vim plugins with"
-  puts "the standard set of plugins. You will then be able to "
-  puts "manage your vim's plugin configuration by editing the "
-  puts "file .vim/vundles.vim"
-  puts "======================================================"
-
-  Dir.glob(File.join('vim', 'bundle','**')) do |sub_path|
-    run %{git config -f #{File.join('.git', 'config')} --remove-section submodule.#{sub_path}}
-    # `git rm --cached #{sub_path}`
-    FileUtils.rm_rf(File.join('.git', 'modules', sub_path))
-  end
-  FileUtils.mv(File.join('vim','bundle'), File.join('vim', 'bundle.old'))
-end
-
-desc "Runs Vundle installer in a clean vim environment"
-task :install_vundle do
-  puts "======================================================"
-  puts "Installing and updating vundles."
-  puts "The installer will now proceed to run PluginInstall to install vundles."
+  puts "Installing dein"
   puts "======================================================"
 
   puts ""
 
-  vundle_path = File.join('vim','bundle', 'vundle')
-  unless File.exists?(vundle_path)
+  dein_path = File.join('nvim','dein')
+  unless File.exists?(dein_path)
     run %{
-      cd $HOME/.yadr
-      git clone https://github.com/gmarik/vundle.git #{vundle_path}
+      curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+      sh ./installer.sh #{dein_path}
     }
   end
-
-  Vundle::update_vundle
 end
 
 task :default => 'install'
@@ -361,11 +337,6 @@ def install_file(file, source, target, method = :symlink)
     puts "=========================================================="
     puts
 end
-
-def needs_migration_to_vundle?
-  File.exists? File.join('vim', 'bundle', 'tpope-vim-pathogen')
-end
-
 
 def list_vim_submodules
   result=`git submodule -q foreach 'echo $name"||"\`git remote -v | awk "END{print \\\\\$2}"\`'`.select{ |line| line =~ /^vim.bundle/ }.map{ |line| line.split('||') }
