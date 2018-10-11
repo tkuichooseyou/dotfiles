@@ -4,9 +4,8 @@
 yadr=$HOME/.yadr
 
 # Teddy
-alias int='tmux attach -t int'
 alias work='tmux attach -t work'
-alias brews='brew update && brew upgrade && brew cleanup; brew cask cleanup; brew doctor'
+alias brews='brew update && brew upgrade && brew cleanup; brew doctor'
 alias vims='vim -c VundleUpdate -c quitall'
 alias keyboard='cd ~/repos/personal/fork/qmk_firmware/keyboards/ergodox/keymaps/tkuichooseyou'
 alias git='noglob git'
@@ -102,6 +101,6 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 
 # teddy
     # removed --color
-alias code2ebook='/Users/teddy/bin/code2ebook/src2html.pl --tab-width 4 --cross-reference --navigator --line-numbers' 
+alias code2ebook='/Users/teddy/bin/code2ebook/src2html.pl --tab-width 4 --cross-reference --navigator --line-numbers'
     ## --authors --title
 alias ebook-convert='ebook-convert html_out/index.html my-project.mobi --output-profile kindle --no-inline-toc --language en'
