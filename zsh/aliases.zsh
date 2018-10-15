@@ -9,6 +9,7 @@ alias brews='brew update && brew upgrade && brew cleanup; brew doctor'
 alias vims='vim -c VundleUpdate -c quitall'
 alias keyboard='cd ~/repos/personal/fork/qmk_firmware/keyboards/ergodox/keymaps/tkuichooseyou'
 alias git='noglob git'
+alias ag="echo 'use pt'"
 
 # Get operating system
 platform='unknown'
@@ -18,13 +19,6 @@ if [[ $unamestr == 'Linux' ]]; then
 elif [[ $unamestr == 'Darwin' ]]; then
   platform='darwin'
 fi
-
-# YADR support
-alias yav='yadr vim-add-plugin'
-alias ydv='yadr vim-delete-plugin'
-alias ylv='yadr vim-list-plugin'
-alias yup='yadr update-plugins'
-alias yip='yadr init-plugins'
 
 # PS
 alias psa="ps aux"
@@ -55,7 +49,7 @@ TRAPHUP() {
   source $yadr/zsh/aliases.zsh
 }
 
-alias ae='vim $yadr/zsh/aliases.zsh' #alias edit
+alias ae='nvim $yadr/zsh/aliases.zsh' #alias edit
 alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
 alias gar="killall -HUP -u \"$USER\" zsh"  #global alias reload
 
@@ -63,10 +57,10 @@ alias gar="killall -HUP -u \"$USER\" zsh"  #global alias reload
 alias :q='exit'
 
 # vimrc editing
-alias ve='vim ~/.vimrc'
+alias ve='nvim ~/.SpaceVim.d/init.toml'
 
 # zsh profile editing
-alias ze='vim ~/.zshrc'
+alias ze='nvim ~/.zshrc'
 
 # Common shell functions
 alias less='less -r'
