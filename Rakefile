@@ -24,7 +24,7 @@ task :install => [:submodule_init, :submodules] do
   symlink_ssh_config()
   if want_to_install?('vim configuration (highly recommended)')
     install_files(Dir.glob('{nvim,nvimrc,xvimrc}'))
-    Rake::Task["install_dein"].execute
+    Rake::Task["install_spacevim"].execute
   end
 
   karabiner = 'karabiner.json'
@@ -79,19 +79,18 @@ task :submodules do
   end
 end
 
-desc "Runs dein installer"
-task :install_dein do
+desc "Runs spacevim installer"
+task :install_spacevim do
   puts "======================================================"
-  puts "Installing dein"
+  puts "Installing spacevim"
   puts "======================================================"
 
   puts ""
 
-  dein_path = File.join('nvim','dein')
-  unless File.exists?(dein_path)
+  spacevim_path = File.join('nvim','spacevim')
+  unless File.exists?(spacevim_path)
     run %{
-      curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-      sh ./installer.sh #{dein_path}
+        curl -sLf https://spacevim.org/install.sh | bash
     }
   end
 end
