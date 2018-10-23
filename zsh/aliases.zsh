@@ -98,3 +98,4 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias code2ebook='/Users/teddy/bin/code2ebook/src2html.pl --tab-width 4 --cross-reference --navigator --line-numbers'
     ## --authors --title
 alias ebook-convert='ebook-convert html_out/index.html my-project.mobi --output-profile kindle --no-inline-toc --language en'
+alias k2pdfopt='/Users/teddy/bin/k2pdfopt -dev kv'

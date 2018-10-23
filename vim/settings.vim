@@ -6,6 +6,8 @@ set pastetoggle=,i
 set showmode
 set clipboard=unnamed
 
+au BufNewFile,BufRead Fastfile setlocal ft=ruby
+
 for fpath in split(globpath(vimsettings, '*.vim'), '\n')
 
   if (fpath == expand(vimsettings) . "/yadr-keymap-mac.vim") && uname[:4] ==? "linux"
