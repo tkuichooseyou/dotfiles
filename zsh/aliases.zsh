@@ -7,7 +7,7 @@ yadr=$HOME/.yadr
 alias work='tmux attach -t work'
 alias brews='brew update && brew upgrade && brew cleanup; brew doctor'
 alias vims='vim -c VundleUpdate -c quitall'
-alias keyboard='cd ~/repos/personal/fork/qmk_firmware/keyboards/ergodox/keymaps/tkuichooseyou'
+alias keyboard='cd ~/repos/personal/fork/qmk_firmware/keyboards/ergodox_ez/keymaps/tkuichooseyou'
 alias git='noglob git'
 alias ag="echo 'use pt'"
 
