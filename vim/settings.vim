@@ -20,17 +20,17 @@ for fpath in split(globpath(vimsettings, '*.vim'), '\n')
 endfor
 
 " https://robots.thoughtbot.com/faster-grepping-in-vim
-" The Silver Searcher
+" The Platinum Searcher
 if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  " Use pt over grep
+  set grepprg=pt\ --nogroup\ --nocolor
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " Use pt in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'pt %s -l --nocolor -g ""'
 
-  " ag is fast enough that CtrlP doesn't need to cache
+  " pt is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-nnoremap \ :Ag<SPACE>
+nnoremap \ :Pt<SPACE>
 
 autocmd FileType swift setlocal shiftwidth=4 tabstop=4

@@ -1,16 +1,16 @@
 if exists("g:ctrlp_user_command")
   unlet g:ctrlp_user_command
 endif
-if executable('ag')
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+if executable('pt')
+  " Use pt in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command =
-    \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+    \ 'pt %s --files-with-matches --ignore "[.git,Carthage,Pods,LinkedFrameworks]" -g '
 
-  " ag is fast enough that CtrlP doesn't need to cache
+  " pt is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 else
-  " Fall back to using git ls-files if Ag is not available
-  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+  " Fall back to using git ls-files if Pt is not available
+  let g:ctrlp_custom_ignore = "[.git,Carthage,Pods,LinkedFrameworks]"
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
 
