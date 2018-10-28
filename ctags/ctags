@@ -69,6 +69,7 @@
 --exclude=\*.bak
 --exclude=\*.pyc
 --exclude=\*.class
+--exclude=\*.vim
 --exclude=\*.sln
 --exclude=\*.Master
 --exclude=\*.cache
