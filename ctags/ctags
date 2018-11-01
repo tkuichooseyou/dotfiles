@@ -63,6 +63,7 @@
 --exclude=nginx
 --exclude=min
 --exclude=vendor
+--exclude=\*.yadr.\*
 --exclude=\*.min.\*
 --exclude=\*.map
 --exclude=\*.swp

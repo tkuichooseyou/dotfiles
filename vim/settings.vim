@@ -23,7 +23,7 @@ endfor
 
 " https://robots.thoughtbot.com/faster-grepping-in-vim
 " The Platinum Searcher
-if executable('ag')
+if executable('pt')
   " Use pt over grep
   set grepprg=pt\ --nogroup\ --nocolor
 

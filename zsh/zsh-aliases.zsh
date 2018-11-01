@@ -18,6 +18,6 @@ function fn() { pt -i -l -G=.*$1.* . }
 
 alias yt='noglob yt'
 function yt() {
-  youtube-dl $1 -o '~/Movies/youtube/%(title)s.%(ext)s' &>/dev/null &
+	youtube-dl -f 'bestvideo[ext=mp4][height <=? 720]+bestaudio[ext=m4a]/mp4' $1 -o '~/Movies/youtube/%(title)s.%(ext)s' &>/dev/null &
 }
 
