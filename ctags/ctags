@@ -58,6 +58,7 @@
 --exclude=.git
 --exclude=.config
 --exclude=.cache
+--exclude=\*..cache.\*
 --exclude=.build
 --exclude=YouCompleteMe
 --exclude=nginx
