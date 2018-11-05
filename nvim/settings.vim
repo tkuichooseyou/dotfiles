@@ -1,5 +1,6 @@
 let vimsettings = '~/.nvim/settings'
 let uname = system("uname -s")
+ let g:gutentags_ctags_exclude = ["*.min.js", "*.min.css", "build", "vendor", ".git", "node_modules", ".yadr", ".cache"]
 
 :nnoremap <leader>ve :vsplit ~/.nvim/settings.vim<cr>
 :nnoremap <leader>vs :source ~/.nvim/settings.vim<cr>

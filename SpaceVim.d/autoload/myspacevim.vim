@@ -84,10 +84,11 @@ set wildignore+=*DS_Store*
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=*.gem
+set wildignore+=*.cache
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
-
+set wildignore+=*node_modules*
 "
 " ================ Scrolling ========================
 

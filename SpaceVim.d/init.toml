@@ -44,6 +44,13 @@ default_height = 30
   on_cmd = ["SwiftDoc"]
   merged = 0
 
+[[custom_plugins]]
+  name = "HerringtonDarkholme/yats.vim"
+
+[[custom_plugins]]
+  name = "wellle/targets.vim"
+  merged = 0
+
 [[layers]]
     name = 'tmux'
 [[layers]]

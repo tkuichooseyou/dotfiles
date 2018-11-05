@@ -6,6 +6,7 @@ yadr=$HOME/.yadr
 # Teddy
 alias work='tmux attach -t work'
 alias brews='brew update && brew upgrade && brew cleanup; brew doctor'
+alias vim='nvim'
 alias vims='vim -c VundleUpdate -c quitall'
 alias keyboard='cd ~/repos/personal/fork/qmk_firmware/keyboards/ergodox_ez/keymaps/tkuichooseyou'
 alias git='noglob git'
@@ -94,6 +95,10 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 # teddy
+
+# fasd extra aliases
+alias v='f -e nvim'
+
     # removed --color
 alias code2ebook='/Users/teddy/bin/code2ebook/src2html.pl --tab-width 4 --cross-reference --navigator --line-numbers'
     ## --authors --title
