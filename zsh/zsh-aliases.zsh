@@ -21,3 +21,10 @@ function yt() {
 	youtube-dl -f 'bestvideo[ext=mp4][height <=? 720]+bestaudio[ext=m4a]/mp4' $1 -o '~/Movies/youtube/%(title)s.%(ext)s' &>/dev/null &
 }
 
+function ytlist() {
+  youtube-dl -f 'bestvideo[ext=mp4][height <=? 720]+bestaudio[ext=m4a]/mp4' $1 -o '~/Movies/youtube/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'
+}
+
+function gif() {
+  gifify -r 30@2 -p 215:447 $1
+}
