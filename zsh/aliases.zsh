@@ -88,7 +88,7 @@ alias todo='open nvalt://find/todo'
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
-alias grb='git recent-branches'
+alias prune='git remote prune origin && git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
 # Finder
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
