@@ -105,5 +105,5 @@ set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
 
-so ~/.yadr/nvim/settings.vim
+so ~/.yadr/SpaceVim.d/autoload/mysettings.vim
 endf
