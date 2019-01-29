@@ -14,7 +14,9 @@ alias -g G='| grep' # now you can do: ls foo G something
 # (f)ind by (n)ame
 # usage: fn foo
 # to find all files containing 'foo' in the name
-function fn() { pt -i -l -G=.*$1.* . }
+function fn() {
+  rg --files . --iglob *$1* | fpp
+}
 
 alias yt='noglob yt'
 function yt() {

@@ -85,6 +85,7 @@ default_height = 30
   name = "lang#swift"
 [[layers]]
     name = 'lang#python'
+    format-on-save = 1
 [[layers]]
     name = 'tools'
 [[layers]]

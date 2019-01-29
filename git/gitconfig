@@ -96,7 +96,7 @@
 [mergetool]
   prompt = false
 [mergetool "vimdiff"]
-  cmd="vim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
+  cmd="nvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
   keepbackup=false
 [merge]
   summary = true
@@ -112,7 +112,7 @@
   default = upstream
 [core]
 	autocrlf = input
-  editor = vim -v
+  editor = nvim
   excludesfile = ~/.yadr/git/gitignore
   whitespace = trailing-space,space-before-tab
 [advice]
