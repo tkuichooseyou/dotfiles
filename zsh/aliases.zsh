@@ -11,6 +11,7 @@ alias vims='vim -c VundleUpdate -c quitall'
 alias keyboard='cd ~/repos/personal/fork/qmk_firmware/keyboards/ergodox_ez/keymaps/tkuichooseyou'
 alias git='noglob git'
 alias ag="echo 'use pt'"
+alias play="nvim ~/Library/Mobile\ Documents/iCloud\~com\~apple\~Playgrounds/Documents/alg-playground/leetcode-swift-google.playground/Pages/leetcode-swift-google.xcplaygroundpage/Contents.swift"
 
 # Get operating system
 platform='unknown'
@@ -99,9 +100,11 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 
 # fasd extra aliases
 alias v='f -e nvim'
+alias xvim1='rm -rf /Users/teddy/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/XVim2.xcplugin && cp -R /Users/teddy/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/xcode10.1/XVim2.xcplugin /Users/teddy/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/'
+alias xvim2='rm -rf /Users/teddy/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/XVim2.xcplugin && cp -R /Users/teddy/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/xcode10.2/XVim2.xcplugin /Users/teddy/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/'
 
     # removed --color
 alias code2ebook='/Users/teddy/bin/code2ebook/src2html.pl --tab-width 4 --cross-reference --navigator --line-numbers'
     ## --authors --title
 alias ebook-convert='ebook-convert html_out/index.html my-project.mobi --output-profile kindle --no-inline-toc --language en'
-alias k2pdfopt='/Users/teddy/bin/k2pdfopt -dev kv'
+alias pdfcrop='/Users/teddy/bin/k2pdfopt -dev kv'
