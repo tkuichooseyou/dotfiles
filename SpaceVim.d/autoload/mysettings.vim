@@ -121,3 +121,5 @@ nnoremap <silent> ,cn :let @* = expand("%:t")<CR>
 "Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
 
+au FileType gitcommit,gitrebase let g:gutentags_enabled=0
+
