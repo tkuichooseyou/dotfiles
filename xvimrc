@@ -12,5 +12,5 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-
 autocmd BufWritePre * :%s/\s\+$//e
+:nmap <D-Esc> :%s!^\s+$!!g<CR>
