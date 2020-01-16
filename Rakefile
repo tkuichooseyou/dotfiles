@@ -15,18 +15,16 @@ task :install => [:submodule_init, :submodules] do
   `defaults write com.apple.screencapture location ~/Pictures/myscreenshots`
 
   # this has all the runcoms from this directory.
-  install_files(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
-  install_files(Dir.glob('irb/*')) if want_to_install?('irb/pry configs (more colorful)')
-  install_files(Dir.glob('ruby/*')) if want_to_install?('rubygems config (faster/no docs)')
-  install_files(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
-  install_files(Dir.glob('tmux/*')) if want_to_install?('tmux config')
-  install_files(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
+  install_files(Dir.glob('git/*'))
+  install_files(Dir.glob('irb/*'))
+  install_files(Dir.glob('ruby/*'))
+  install_files(Dir.glob('ctags/*'))
+  install_files(Dir.glob('tmux/*'))
+  install_files(Dir.glob('vimify/*'))
   install_files(Dir.glob('{tigrc,ghci,SpaceVim.d/init.toml,SpaceVim.d/autoload.myspacevim.vim,ptconfig.toml}'))
   symlink_ssh_config()
-  if want_to_install?('vim configuration (highly recommended)')
-    install_files(Dir.glob('{nvim,nvimrc,xvimrc}'))
-    Rake::Task["install_spacevim"].execute
-  end
+  install_files(Dir.glob('{nvim,nvimrc,xvimrc}'))
+  Rake::Task["install_spacevim"].execute
 
   karabiner = 'karabiner.json'
   source = "#{ENV["PWD"]}/#{karabiner}"
@@ -46,9 +44,7 @@ task :install => [:submodule_init, :submodules] do
 end
 
 task :install_prezto do
-  if want_to_install?('zsh enhancements & prezto')
-    install_prezto
-  end
+  install_prezto
 end
 
 desc 'Updates the installation'
@@ -278,15 +274,6 @@ def install_prezto
     else
       run %{ chsh -s /bin/zsh }
     end
-  end
-end
-
-def want_to_install? (section)
-  if ENV["ASK"]=="true"
-    puts "Would you like to install configuration files for: #{section}? [y]es, [n]o"
-    STDIN.gets.chomp == 'y'
-  else
-    true
   end
 end
 
