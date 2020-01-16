@@ -21,10 +21,12 @@ task :install => [:submodule_init, :submodules] do
   install_files(Dir.glob('ctags/*'))
   install_files(Dir.glob('tmux/*'))
   install_files(Dir.glob('vimify/*'))
-  install_files(Dir.glob('{tigrc,ghci,SpaceVim.d/init.toml,SpaceVim.d/autoload.myspacevim.vim,ptconfig.toml}'))
+  install_files(Dir.glob('{tigrc,ghci,ptconfig.toml}'))
   symlink_ssh_config()
   install_files(Dir.glob('{nvim,nvimrc,xvimrc}'))
   Rake::Task["install_spacevim"].execute
+  Rake::Task["spacevim_config"].execute
+
 
   karabiner = 'karabiner.json'
   source = "#{ENV["PWD"]}/#{karabiner}"
@@ -91,6 +93,17 @@ task :install_spacevim do
     }
   end
 end
+
+desc "Links spacevim autoload and init.toml to .SpaceVim.d"
+task :spacevim_config do
+  install_folder_files('.SpaceVim.d', Dir.glob('{SpaceVim.d/init.toml}'))
+  autoload_folder = 'SpaceVim.d/autoload'
+  if !File.exists?("~/.#{autoload_folder}")
+    `mkdir ~/.#{autoload_folder}`
+  end
+  install_folder_files(".#{autoload_folder}", Dir.glob('{SpaceVim.d/autoload/myspacevim.vim,SpaceVim.d/autoload/mysettings.vim}'))
+end
+
 
 task :default => 'install'
 
@@ -289,6 +302,15 @@ def install_files(files, method = :symlink)
     file = f.split('/').last
     source = "#{ENV["PWD"]}/#{f}"
     target = "#{ENV["HOME"]}/.#{file}"
+    install_file(file, source, target, method)
+  end
+end
+
+def install_folder_files(folder, files, method = :symlink)
+  files.each do |f|
+    file = f.split('/').last
+    source = "#{ENV["PWD"]}/#{f}"
+    target = "#{ENV["HOME"]}/#{folder}/#{file}"
     install_file(file, source, target, method)
   end
 end
