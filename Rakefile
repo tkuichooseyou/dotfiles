@@ -11,7 +11,8 @@ task :install => [:submodule_init, :submodules] do
 
   install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
   install_rvm_binstubs
-  `defaults write com.apple.screencapture location ~/Pictures/Screenshots`
+  `mkdir ~/Pictures/myscreenshots`
+  `defaults write com.apple.screencapture location ~/Pictures/myscreenshots`
 
   # this has all the runcoms from this directory.
   install_files(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
