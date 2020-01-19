@@ -20,13 +20,15 @@ function fn() {
 
 alias yt='noglob yt'
 function yt() {
-	youtube-dl -f 'bestvideo[ext=mp4][height <=? 720]+bestaudio[ext=m4a]/mp4' $1 -o '~/Movies/youtube/%(title)s.%(ext)s' &>/dev/null &
+  youtube-dl -f 'bestvideo[ext=mp4][height <=? 720]+bestaudio[ext=m4a]/mp4' $1 -o '~/Movies/youtube/%(uploader)s - %(title)s.%(ext)s' &>/dev/null &
 }
 
+alias ytlist='noglob ytlist'
 function ytlist() {
-  youtube-dl -f 'bestvideo[ext=mp4][height <=? 720]+bestaudio[ext=m4a]/mp4' $1 -o '~/Movies/youtube/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'
+  youtube-dl --yes-playlist --ignore-errors -f 'bestvideo[ext=mp4][height <=? 720]+bestaudio[ext=m4a]/mp4' $1 -o '~/Movies/youtube/%(playlist)s/%(playlist)s - %(playlist_index)s - %(title)s.%(ext)s'
 }
 
+alias ytaudio='noglob ytlist'
 function ytaudio() {
   youtube-dl -f 'bestaudio[ext=m4a]'  $1 -o '~/Music/youtubemusic/%(title)s.%(ext)s' &>/dev/null &
 }
