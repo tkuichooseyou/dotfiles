@@ -73,19 +73,8 @@ alias lh='ls -alt | head' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
 
-# Zippin
-alias gz='tar -zcvf'
-
-alias ka9='killall -9'
-alias k9='kill -9'
-
 # Gem install
-alias sgi='sudo gem install --no-ri --no-rdoc'
-
-# TODOS
-# This uses NValt (NotationalVelocity alt fork) - http://brettterpstra.com/project/nvalt/
-# to find the note called 'todo'
-alias todo='open nvalt://find/todo'
+alias sgi='gem install --no-ri --no-rdoc'
 
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
@@ -108,3 +97,5 @@ alias code2ebook='/Users/teddy/bin/code2ebook/src2html.pl --tab-width 4 --cross-
     ## --authors --title
 alias ebook-convert='ebook-convert html_out/index.html my-project.mobi --output-profile kindle --no-inline-toc --language en'
 alias pdfcrop='/Users/teddy/bin/k2pdfopt -dev kv'
+
+alias vpn="sudo openconnect --user=tku asa-virginia-1.adobe.com"

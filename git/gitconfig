@@ -86,11 +86,9 @@
   # tag
   t = tag -n                        # show tags with <n> lines of each tag message
 
-  # svn helpers
-  svnr = svn rebase
-  svnd = svn dcommit
-  svnl = svn log --oneline --show-commit
-	stsh = stash --keep-index
+  # submodule
+  sub = submodule update --init --recurisve
+  subco = submodule foreach --recurisve git co .
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [mergetool]

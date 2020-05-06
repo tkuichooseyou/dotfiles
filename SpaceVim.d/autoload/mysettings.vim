@@ -11,19 +11,6 @@ set showmode
 set clipboard=unnamed
 autocmd FileType swift setlocal shiftwidth=4 tabstop=4
 
-for fpath in split(globpath(vimsettings, '*.vim'), '\n')
-
-  if (fpath == expand(vimsettings) . "/yadr-keymap-mac.vim") && uname[:4] ==? "linux"
-    continue " skip mac mappings for linux
-  endif
-
-  if (fpath == expand(vimsettings) . "/yadr-keymap-linux.vim") && uname[:4] !=? "linux"
-    continue " skip linux mappings for mac
-  endif
-
-  exe 'source' fpath
-endfor
-
 " https://robots.thoughtbot.com/faster-grepping-in-vim
 " The Silver Searcher
 if executable('pt')
@@ -122,4 +109,11 @@ nnoremap <silent> ,cn :let @* = expand("%:t")<CR>
 nmap <silent> // :nohlsearch<CR>
 
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
+
+au BufNewFile,BufRead Vagrantfile set syntax=ruby filetype=ruby
+au BufNewFile,BufRead Matchfile set syntax=ruby filetype=ruby
+au BufNewFile,BufRead Appfile set syntax=ruby filetype=ruby
+au BufNewFile,BufRead Gymfile set syntax=ruby filetype=ruby
+au BufNewFile,BufRead Fastfile set syntax=ruby filetype=ruby
+au BufNewFile,BufRead Podfile* set syntax=ruby filetype=ruby
 

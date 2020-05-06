@@ -15,7 +15,7 @@ alias -g G='| grep' # now you can do: ls foo G something
 # usage: fn foo
 # to find all files containing 'foo' in the name
 function fn() {
-  rg --files . --iglob *$1* | fpp
+  fd $1 | fpp
 }
 
 alias yt='noglob yt'
@@ -28,9 +28,14 @@ function ytlist() {
   youtube-dl --yes-playlist --ignore-errors -f 'bestvideo[ext=mp4][height <=? 720]+bestaudio[ext=m4a]/mp4' $1 -o '~/Movies/youtube/%(playlist)s/%(playlist)s - %(playlist_index)s - %(title)s.%(ext)s'
 }
 
-alias ytaudio='noglob ytlist'
+alias ytaudio='noglob ytaudio'
 function ytaudio() {
   youtube-dl -f 'bestaudio[ext=m4a]'  $1 -o '~/Music/youtubemusic/%(title)s.%(ext)s' &>/dev/null &
+}
+
+alias ytaudiolist='noglob ytaudiolist'
+function ytaudiolist() {
+  youtube-dl --yes-playlist --ignore-errors -f 'bestaudio[ext=m4a]' $1 -o '~/Movies/youtube/%(playlist)s/%(playlist)s - %(playlist_index)s - %(title)s.%(ext)s'
 }
 
 function gif() {

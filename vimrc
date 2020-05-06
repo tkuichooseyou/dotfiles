@@ -27,9 +27,17 @@ set hidden
 "turn on syntax highlighting
 syntax on
 
+"ruby syntax highlighting
+autocmd BufNewFile,BufRead Vagrantfile set syntax=ruby expandtab ts=2 sw=2
+autocmd BufNewFile,BufRead Matchfile set syntax=ruby expandtab ts=2 sw=2
+autocmd BufNewFile,BufRead Appfile set syntax=ruby expandtab ts=2 sw=2
+autocmd BufNewFile,BufRead Gymfile set syntax=ruby expandtab ts=2 sw=2
+autocmd BufNewFile,BufRead Fastfile set syntax=ruby expandtab ts=2 sw=2
+autocmd BufNewFile,BufRead Podfile* set syntax=ruby expandtab ts=2 sw=2
+
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all 
+" The mapleader has to be set before vundle starts loading all
 " the plugins.
 let mapleader=","
 
