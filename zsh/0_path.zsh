@@ -7,5 +7,6 @@ path=(
   $HOME/.yadr/bin/yadr
   $HOME/.rvm/bin
   $HOME/go/bin
+  $HOME/bin
 )
 
