@@ -11,7 +11,10 @@ alias vims='vim -c VundleUpdate -c quitall'
 alias keyboard='cd ~/repos/personal/fork/qmk_firmware/keyboards/ergodox_ez/keymaps/tkuichooseyou'
 alias git='noglob git'
 alias ag="echo 'use pt'"
-alias play="nvim ~/Library/Mobile\ Documents/iCloud\~com\~apple\~Playgrounds/Documents/alg-playground/leetcode-swift-google.playground/Pages/leetcode-swift-google.xcplaygroundpage/Contents.swift"
+alias play="vim ~/Library/Mobile\ Documents/iCloud\~com\~apple\~Playgrounds/Documents/alg-playground/leetcode-swift-google.playground/Pages/leetcode-swift-google.xcplaygroundpage/Contents.swift"
+alias dim="ddcctl -d 1 -b 1 -c 60"
+alias brighter="ddcctl -d 1 -b 10+ -c 6+"
+alias dimmer="ddcctl -d 1 -b 10- -c 6-"
 
 # Get operating system
 platform='unknown'
@@ -51,19 +54,19 @@ TRAPHUP() {
   source $yadr/zsh/aliases.zsh
 }
 
-alias ae='nvim -O $yadr/zsh/aliases.zsh $yadr/zsh/zsh-aliases.zsh' #alias edit
+alias ae='vim -O $yadr/zsh/aliases.zsh $yadr/zsh/zsh-aliases.zsh' #alias edit
 alias ar='source $yadr/zsh/aliases.zsh && source $yadr/zsh/zsh-aliases.zsh'  #alias reload
-alias path='nvim $yadr/zsh/0_path.zsh'  #alias reload
+alias path='vim $yadr/zsh/0_path.zsh'  #alias reload
 alias gar="killall -HUP -u \"$USER\" zsh"  #global alias reload
 
 # mimic vim functions
 alias :q='exit'
 
 # vimrc editing
-alias ve='nvim ~/.SpaceVim.d/init.toml'
+alias ve='vim ~/.SpaceVim.d/init.toml'
 
 # zsh profile editing
-alias ze='nvim ~/.zshrc'
+alias ze='vim ~/.zshrc'
 
 # Common shell functions
 alias less='less -r'
@@ -88,7 +91,7 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 # teddy
 
 # fasd extra aliases
-alias v='f -e nvim'
+alias v='f -e vim'
 alias xvim1='rm -rf /Users/teddy/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/XVim2.xcplugin && cp -R /Users/teddy/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/xcode10.1/XVim2.xcplugin /Users/teddy/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/'
 alias xvim2='rm -rf /Users/teddy/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/XVim2.xcplugin && cp -R /Users/teddy/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/xcode10.2/XVim2.xcplugin /Users/teddy/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/'
 
@@ -97,5 +100,3 @@ alias code2ebook='/Users/teddy/bin/code2ebook/src2html.pl --tab-width 4 --cross-
     ## --authors --title
 alias ebook-convert='ebook-convert html_out/index.html my-project.mobi --output-profile kindle --no-inline-toc --language en'
 alias pdfcrop='/Users/teddy/bin/k2pdfopt -dev kv'
-
-alias vpn="sudo openconnect --user=tku asa-virginia-1.adobe.com"
