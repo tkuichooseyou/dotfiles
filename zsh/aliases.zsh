@@ -12,9 +12,14 @@ alias keyboard='cd ~/repos/personal/fork/qmk_firmware/keyboards/ergodox_ez/keyma
 alias git='noglob git'
 alias ag="echo 'use pt'"
 alias play="vim ~/Library/Mobile\ Documents/iCloud\~com\~apple\~Playgrounds/Documents/alg-playground/leetcode-swift-google.playground/Pages/leetcode-swift-google.xcplaygroundpage/Contents.swift"
+
+# display ddcctl
 alias dim="ddcctl -d 1 -b 1 -c 60"
+alias mid="ddcctl -d 1 -b 30 -c 60"
 alias brighter="ddcctl -d 1 -b 10+ -c 6+"
 alias dimmer="ddcctl -d 1 -b 10- -c 6-"
+alias hdmi="ddcctl -d 1 -i 17"
+alias usbc="ddcctl -d 1 -i 27"
 
 # Get operating system
 platform='unknown'
