@@ -16,8 +16,7 @@ alias play="vim ~/Library/Mobile\ Documents/iCloud\~com\~apple\~Playgrounds/Docu
 # display ddcctl
 alias dim="ddcctl -d 1 -b 1 -c 60"
 alias mid="ddcctl -d 1 -b 30 -c 60"
-alias brighter="ddcctl -d 1 -b 10+ -c 6+"
-alias dimmer="ddcctl -d 1 -b 10- -c 6-"
+alias bright="ddcctl -d 1 -b 90 -c 60"
 alias hdmi="ddcctl -d 1 -i 17"
 alias usbc="ddcctl -d 1 -i 27"
 
