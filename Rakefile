@@ -23,10 +23,8 @@ task :install => [:submodule_init, :submodules] do
   install_files(Dir.glob('vimify/*'))
   install_files(Dir.glob('{tigrc,ghci,ptconfig.toml}'))
   symlink_ssh_config()
-  install_files(Dir.glob('{nvim,nvimrc,xvimrc}'))
-  Rake::Task["install_spacevim"].execute
-  Rake::Task["spacevim_config"].execute
-
+  install_files(Dir.glob('{vim,vimrc,xvimrc}'))
+  Rake::Task["install_dein"].execute
 
   karabiner = 'karabiner.json'
   source = "#{ENV["PWD"]}/#{karabiner}"
@@ -78,30 +76,21 @@ task :submodules do
   end
 end
 
-desc "Runs spacevim installer"
-task :install_spacevim do
+desc "Runs dein installer"
+task :install_dein do
   puts "======================================================"
-  puts "Installing spacevim"
+  puts "Installing dein"
   puts "======================================================"
 
   puts ""
 
-  spacevim_path = File.join('nvim','spacevim')
-  unless File.exists?(spacevim_path)
+  dein_path = File.join('nvim','dein')
+  unless File.exists?(dein_path)
     run %{
-        curl -sLf https://spacevim.org/install.sh | bash
+      curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+      sh ./installer.sh #{dein_path}
     }
   end
-end
-
-desc "Links spacevim autoload and init.toml to .SpaceVim.d"
-task :spacevim_config do
-  install_folder_files('.SpaceVim.d', Dir.glob('{SpaceVim.d/init.toml}'))
-  autoload_folder = 'SpaceVim.d/autoload'
-  if !File.exists?("~/.#{autoload_folder}")
-    `mkdir ~/.#{autoload_folder}`
-  end
-  install_folder_files(".#{autoload_folder}", Dir.glob('{SpaceVim.d/autoload/myspacevim.vim,SpaceVim.d/autoload/mysettings.vim}'))
 end
 
 
