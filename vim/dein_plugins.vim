@@ -56,7 +56,7 @@ call dein#add("wellle/targets.vim")
 
 " vim improvements
 call dein#add("Raimondi/delimitMate")
-call dein#add("Shougo/neocomplete.git")
+call dein#add("Shougo/deoplete.nvim")
 call dein#add('Shougo/neosnippet')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add("briandoll/change-inside-surroundings.vim.git")
