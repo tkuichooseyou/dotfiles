@@ -7,6 +7,11 @@ path=(
   $HOME/.yadr/bin/yadr
   $HOME/.rvm/bin
   $HOME/go/bin
+  $HOME/homebrew/bin
   $HOME/bin
+  $HOME/bin/flash_aml_mac
 )
 
+LD_LIBRARY_PATH=(
+  $HOME/homebrew/lib
+)
