@@ -31,6 +31,8 @@ task :install => [:submodule_init, :submodules] do
   target = "#{ENV["HOME"]}/.config/karabiner/#{karabiner}"
   install_file(karabiner, source, target)
 
+  install_file('init.vim', "#{ENV["PWD"]}/vimrc", "#{ENV["HOME"]}/.config/nvim/init.vim")
+
   Rake::Task["install_prezto"].execute
   install_tmux_plugins
 
@@ -89,6 +91,7 @@ task :install_dein do
     run %{
       curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
       sh ./installer.sh #{dein_path}
+      rm installer.sh
     }
   end
 end
