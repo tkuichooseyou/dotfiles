@@ -1,6 +1,6 @@
 " appearance
 call dein#add("chrisbra/color_highlight.git")
-call dein#add("skwp/vim-colors-solarized")
+call dein#add("altercation/vim-colors-solarized")
 call dein#add("itchyny/lightline.vim")
 call dein#add("jby/tmux.vim.git")
 call dein#add("morhetz/gruvbox")
